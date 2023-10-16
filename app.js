@@ -12,6 +12,7 @@ const MongoStore = require('connect-mongo');
 
 
 const connectDB = require('./server/config/db');
+const { isActiveRoute } = require('./server/helpers/routeHelpers');
 
 const app =express();
 const PORT = 8089;
@@ -49,6 +50,9 @@ app.use(methodOverride('_method'));
       }
     })
   );
+
+  // use as a global variable 
+  app.locals.isActiveRoute = isActiveRoute;
 
 
 // create static folder
