@@ -141,7 +141,9 @@ router.post('/search', async (req, res) => {
 // about endpoint
 router.get("/about",(req,res)=>{
     // res.send("hi");
-    res.render('about');
+    res.render('about', {
+      currentRoute: '/about'
+    });
 });
 
 // // rougly add some posts into data base make a function
